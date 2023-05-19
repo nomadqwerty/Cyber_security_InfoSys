@@ -5,7 +5,7 @@ const menuOptions = [
   "Cyber-security",
   "Cyber-threats",
   "Pentesting",
-  "intrusion-detection",
+  "Intrusion-detection",
 ];
 
 const subcategoryObj = {
@@ -30,7 +30,7 @@ const subcategoryObj = {
     "Types of penetration tests",
     "Penetration testing tools",
   ],
-  "intrusion-detection": [
+  "Intrusion-detection": [
     "Intrusion detection",
     "Types of intrusion prevention",
     "Intrusion detection system Methods",
@@ -157,6 +157,44 @@ const penTesting = {
   },
 };
 
+const intrusionDetection = {
+  "intrusion detection":
+    "An intrusion detection system (IDS; also intrusion prevention system or IPS) is a device or software application that monitors a network or systems for malicious activity or policy violations. Any intrusion activity or violation is typically reported either to an administrator or collected centrally using a security information and event management (SIEM) system. A SIEM system combines outputs from multiple sources and uses alarm filtering techniques to distinguish malicious activity from false alarms.",
+
+  "types of intrusion prevention": {
+    "introduction paragraph":
+      "Although all intrusion detection systems fulfill the same purpose, they work in slightly different ways. Altogether, there are five IDS types. Let’s explore the details, advantages, and drawbacks of each one.",
+
+    "network intrusion detection system":
+      "A Network Intrusion Detection System (NIDS) is a solution that monitors your entire network through one or more touchpoints. To use a NIDS, you generally need to install it on a piece of hardware within your network infrastructure. Once installed, your NIDS will sample every packet (a collection of data) that passes through it. Your typical NIDS can examine all the traffic that goes through it. With that said, you may not want to analyze everything that comes through your NIDS, as you could end up missing an intrusion attempt due to information overload. To combat this issue, most NIDSs allow you to create a set of “rules” that define the type of packets your NIDS will pick up and store. Rules let you hone in on certain types of traffic, but they also require some knowledge of the NIDS’ syntax.",
+
+    "network node intrusion detection system":
+      "A Network Node Intrusion Detection System (NNIDS) is technically a variation of a NIDS, but since it works differently, we’ll consider it a different type of IDS. A NNIDS also analyzes the packets that pass through it. However, instead of relying on a central device to monitor all network traffic, the system watches over each node connected to your network",
+
+    "host intrusion detection system":
+      "A Host Intrusion Detection System (HIDS) takes the device independence of NNIDS one step further. With a HIDS, you can install IDS software on every device connected to your network. HIDSs work by taking “snapshots” of their assigned device. By comparing the most recent snapshot to past records, the HIDS can identify the differences that could indicate an intrusion.",
+
+    "protocol based intrusion detection system":
+      "A Protocol-Based Intrusion Detection System (PIDS) is a specific IDS that monitors the protocol in use. In practice, this system typically analyzes the HTTP or HTTPS protocol stream between your devices and the server. In most cases, a PIDS will go at the front end of a server. The system can protect your web server by monitoring inbound and outbound traffic. Because they focus on the protocol (the way devices transmit information within a network), PIDSs aren’t necessarily a comprehensive IDS solution. However, they can augment an already robust cybersecurity solution.",
+
+    "application protocol based intrusion detection system":
+      "An Application Protocol-Based Intrusion Detection System (APIDS) is a type of IDS that specializes in software app security. Typically associated with host-based intrusion detection systems (HIDS), APIDSs monitor the communications that occur between applications and the server. An APIDS is typically installed on groups of servers.As with a PIDS, an APIDS is unlikely to solve all of your network monitoring needs. Still, it can complement other types of IDS.",
+  },
+  "intrusion detection system methods": {
+    "introduction paragraph":
+      "Depending on the type of intrusion detection system you choose, your security solution will rely on a few different detection methods to keep you safe. Here’s a brief rundown of each one.",
+
+    "signature based Intrusion detection":
+      "Signature-Based Intrusion Detection Systems (SIDS) aim to identify patterns and match them with known signs of intrusions. A SIDS relies on a database of previous intrusions. If activity within your network matches the “signature” of an attack or breach from the database, the detection system notifies your administrator. Since the database is the backbone of a SIDS solution, frequent database updates are essential, as SIDS can only identify attacks it recognizes. As a result, if your organization becomes the target of a never before seen intrusion technique, no amount of database updates will protect you.",
+
+    "anomaly based intrusion detection":
+      "On the other hand, an Anomaly-Based Intrusion Detection System (AIDS) can identify these new zero-day intrusions. An SIDS uses machine learning (ML) and statistical data to create a model of “normal” behavior. Anytime traffic deviates from this typical behavior, the system flags it as suspicious. The primary issue with AIDS vs. SIDS is the potential for false positives. After all, not all changes are the result of malicious activity; some are simply indications of changes in organizational behavior. But because a SIDS has no database of known attacks to reference, it may report any and all anomalies as intrusions.",
+
+    "hybrid intrusion detection":
+      "A hybrid system combines the best of both worlds. By looking at patterns and one-off events, a Hybrid Intrusion Detection system can flag new and existing intrusion strategies. The only downside to a hybrid system is the even bigger uptick in flagged issues. However, considering that the purpose of an IDS is to flag potential intrusions, it’s hard to see this increase in flags as a negative.",
+  },
+};
+
 const Subcategory = ({ option, setOption, setInfo }) => {
   const subcatOpts = subcategoryObj[option];
   const subcatList = subcatOpts.map((e, i) => {
@@ -230,7 +268,7 @@ const WhatIsCyberSec = (option) => {
     }
   }
 
-  return <div>what</div>;
+  return <div></div>;
 };
 
 const CyberThreats = ({ option }) => {
@@ -250,6 +288,43 @@ const CyberThreats = ({ option }) => {
 const PenTest = ({ option }) => {
   const opt = option?.toLowerCase();
   const data = penTesting[String(opt)];
+  if (typeof data === "string") {
+    return (
+      <div>
+        <h1>{option}</h1>
+        <p>{data}</p>
+      </div>
+    );
+  } else {
+    if (typeof data === "object") {
+      let items = [];
+      for (let key in data) {
+        items.push({ id: String(key), value: data[String(key)] });
+      }
+      console.log(items);
+      const list = items.map((e, i) => {
+        return (
+          <li key={i}>
+            <div>
+              <h1>{e.id}</h1>
+              <p>{e.value}</p>
+            </div>
+          </li>
+        );
+      });
+
+      return (
+        <div className={styles.whatIsCsec}>
+          <ul>{list}</ul>
+        </div>
+      );
+    }
+  }
+};
+
+const IntruDet = ({ option }) => {
+  const opt = option?.toLowerCase();
+  const data = intrusionDetection[String(opt)];
   if (typeof data === "string") {
     return (
       <div>
@@ -327,6 +402,9 @@ const NavigationBar = () => {
           }
           if (option === "Pentesting") {
             return <PenTest option={info} />;
+          }
+          if (option === "Intrusion-detection") {
+            return <IntruDet option={info} />;
           }
         })()}
       </div>
