@@ -17,14 +17,15 @@ const subcategoryObj = {
     "functionality of cyber security",
   ],
   "Cyber-threats": [
-    "Cybercrime",
+    "Cyber crime",
     "Cyber attack",
     "Cyber terrorism",
-    "Malware",
+    "Malicious software",
     "Trojan Horse",
-    "BOTNET",
+    "Bot Net",
   ],
   Pentesting: [
+    "penetration testing",
     "Phases of penetration tests",
     "Types of penetration tests",
     "Penetration testing tools",
@@ -84,6 +85,75 @@ const whatIsCsec = {
 
     "internet of things specified security":
       "The Internet of Things (IoT) consists of a variety of devices with an internet-based connection. This can include sensors, televisions, and appliances used in homes and offices. IoT specified security is an aspect of cyber security that is concerned with protecting these internet-based devices that are readily used by consumers and organizations.IoT devices can be easily hacked where the control of a device is taken from the owner. This is the reason the adoption of IoT devices has been slow. Everything on the internet could be at great risk, so the safety of devices with internet access is very important.",
+  },
+};
+
+const cyberThreats = {
+  "cyber crime":
+    "Cybercrime is a crime involving a computer or computer network. The computer may have been used in committing the crime, or it may be the target. Cybercrime may harm someone's security or finances.",
+  "cyber attack":
+    "A cyber-attack is an exploitation of computer systems and networks. It uses malicious code to alter computer code, logic or data and lead to cybercrimes, such as information and identity theft.",
+  "cyber terrorism":
+    "Cyberterrorism is the use of the Internet to conduct violent acts that result in, or threaten, the loss of life or significant bodily harm, in order to achieve political or ideological gains through threat or intimidation. Acts of deliberate, large-scale disruption of computer networks, especially of personal computers attached to the Internet by means of tools such as computer viruses, computer worms, phishing, malicious software, hardware methods, and programming scripts can all be forms of internet terrorism",
+  "malicious software":
+    "Malicious software (MalWare) is any software intentionally designed to cause disruption to a computer, server, client, or computer network, leak private information, gain unauthorized access to information or systems, deprive access to information, or which unknowingly interferes with the user's computer security and privacy.",
+  "trojan horse":
+    "a Trojan horse is any malware that misleads users of its true intent by disguising itself as a standard program. The term is derived from the ancient Greek story of the deceptive Trojan Horse that led to the fall of the city of Troy.",
+  "bot net":
+    "A botnet is a group of Internet-connected devices, each of which runs one or more bots. Botnets can be used to perform Distributed Denial-of-Service (DDoS) attacks, steal data, send spam, and allow the attacker to access the device and its connection. The owner can control the botnet using command and control (C&C) software.",
+};
+
+const penTesting = {
+  "penetration testing":
+    "A penetration test (pen test) is an authorized simulated attack performed on a computer system to evaluate its security. Penetration testers use the same tools, techniques, and processes as attackers to find and demonstrate the business impacts of weaknesses in a system.",
+  "phases of penetration tests": {
+    "introduction paragraph":
+      "There are five penetration testing phases: reconnaissance, scanning, vulnerability assessment, exploitation, and reporting. Let’s take a closer look at the 5 Penetration Testing phases.",
+
+    "reconnaissance phase":
+      "The first penetration testing phase is reconnaissance. In this phase, the tester gathers as much information about the target system as they can, including information about the network topology, operating systems and applications, user accounts, and other relevant information. The goal is to gather as much data as possible so that the tester can plan an effective attack strategy.Reconnaissance can be categorized as either active or passive depending on what methods are used to gather information (Braithwaite, 2022). Passive reconnaissance pulls information from resources that are already publicly available, whereas active reconnaissance involves directly interacting with the target system to gain information. Typically, both methods are necessary to form a full picture of the target’s vulnerabilities.",
+
+    "scanning phase":
+      "Once all the relevant data has been gathered in the reconnaissance phase, it’s time to move on to scanning. In this penetration testing phase, the tester uses various tools to identify open ports and check network traffic on the target system. Because open ports are potential entry points for attackers, penetration testers need to identify as many open ports as possible for the next penetration testing phase. This step can also be performed outside of penetration testing; in those cases, it’s referred to simply as vulnerability scanning and is usually an automated process. However, there are drawbacks to only performing a scan without a full penetration test—namely, scanning can identify a potential threat but cannot determine the level at which hackers can gain access (Agio, 2022). So, while scanning is essential for cybersecurity, it also needs human intervention in the form of penetration testers to reach its full potential.",
+
+    "vulnerability assessment":
+      "The third penetration testing phase is vulnerability assessment, in which the tester uses all the data gathered in the reconnaissance and scanning phases to identify potential vulnerabilities and determine whether they can be exploited. Much like scanning, vulnerability assessment is a useful tool on its own but is more powerful when combined with the other penetration testing phases. When determining the risk of discovered vulnerabilities during this stage, penetration testers have many resources to turn to. One is the National Vulnerability Database (NVD), a repository of vulnerability management data created and maintained by the U.S. government that analyzes the software vulnerabilities published in the Common Vulnerabilities and Exposures (CVE) database. The NVD rates the severity of known vulnerabilities using the Common Vulnerability Scoring System (CVSS).",
+
+    "exploitation phase":
+      "Once vulnerabilities have been identified, it’s time for exploitation. In this penetration testing phase, the penetration tester attempts to access the target system and exploit the identified vulnerabilities, typically by using a tool like Metasploit to simulate real-world attacks.This is perhaps the most delicate penetration testing phase because accessing the target system requires bypassing security restrictions. Though system crashes during penetration testing are rare, testers must still be cautious to ensure that the system isn’t compromised or damaged (Basu, 2022).",
+
+    "reporting findings":
+      "Once the exploitation phase is complete, the tester prepares a report documenting the penetration test’s findings. The report generated in this final penetration testing phase can be used to fix any vulnerabilities found in the system and improve the organization’s security posture. Building a penetration testing report requires clearly documenting vulnerabilities and putting them into context so that the organization can remediate its security risks. The most useful reports include sections for a detailed outline of uncovered vulnerabilities (including CVSS scores), a business impact assessment, an explanation of the exploitation phase’s difficulty, a technical risk briefing, remediation advice, and strategic recommendations (Sharma, 2022).",
+  },
+  "types of penetration tests": {
+    "introduction paragraph":
+      "There are five main types of penetration test, each of which focuses on different security vulnerabilities and uses a unique set of tools. Understanding the different forms of penetration testing is essential in ensuring that you can find the appropriate test to suit your needs.",
+
+    "network penetration test":
+      "In a network penetration test, the penetration tester audits a network environment for security vulnerabilities. Network penetration tests can be further subdivided into two categories: external tests and internal tests. An external penetration test involves testing public IP addresses, whereas an internal test provides the tester with network access so that they can emulate a hacker who has already penetrated the network’s defenses. Penetration testers focus on the following areas in network penetration tests: Firewall configuration, Firewall bypass testing, Stateful inspection analysis, Intrusion prevention system deception, DNS-level attacks",
+
+    "web application penetration test":
+      "In a web application penetration test, testers search for security problems associated with the insecure design, development, or coding of a web app. These types of tests focus on browsers, websites, web applications, and related items, including plug-ins, procedures, and applets.",
+
+    "client side penetration test":
+      "Client-side penetration tests identify security vulnerabilities within an organization. These are often located in the programs and applications the organization uses, such as email platforms, web browsers, and Adobe Acrobat.Hackers may, for example, gain access to a vulnerable application through a well-crafted email directing an employee to a malicious webpage or load malware onto a USB stick that can execute the malware once it is inserted into a device. Client-side penetration tests aim to identify these risks and address all related internal vulnerabilities.",
+
+    "social engineering penetration test":
+      "Social engineering penetration tests focus on the human aspect of an organization’s security. In a social engineering test, testers attempt to deceive employees into giving up sensitive information or allowing the tester access to the organization’s systems. This enables penetration testers to understand the organization’s vulnerability to scams or other social engineering cyberattacks.Testers often use phishing scams as part of social engineering tests. Physical testing may be another aspect of a social engineering test: Penetration testers can attempt to gain access to a secured building or location for which they don’t have clearance by taking advantage of employees’ ignorance of security protocols.",
+  },
+  "penetration testing tools": {
+    "introduction paragraph":
+      "There are many different penetration testing tools available, and each has its strengths and weaknesses. Listed below are just a few of the many penetration testing tools available (Aboagye, 2021). As a penetration tester, it’s essential to be familiar with as many of them as possible so that you can choose the right tool for each penetration testing phase. ",
+    "n map":
+      "Nmap is a powerful network scanning tool that can scan for open ports and services. It also includes features for identifying vulnerable applications.",
+
+    "meta sploit":
+      "Metasploit is a vulnerability exploitation tool. It includes a library of exploits for a variety of programs and operating systems, as well as a wizard that can assist penetration testers in capitalizing on known vulnerabilities.",
+
+    "wire shark":
+      "Wireshark is a network analysis tool that can capture packet data from a network and decode it into readable form. This can be useful for identifying malicious traffic or sensitive information being transmitted over a network",
+    "burp suite":
+      "Burp Suite is an all-in-one web application security testing tool. It can scan websites for vulnerabilities, manipulate requests and responses, and intercept traffic between the client and server",
   },
 };
 
@@ -163,6 +233,56 @@ const WhatIsCyberSec = (option) => {
   return <div>what</div>;
 };
 
+const CyberThreats = ({ option }) => {
+  const opt = option.toLowerCase();
+  const data = cyberThreats[String(opt)];
+  console.log(data);
+  if (data) {
+    return (
+      <div>
+        <h1>{option}</h1>
+        <p>{data}</p>
+      </div>
+    );
+  }
+};
+
+const PenTest = ({ option }) => {
+  const opt = option?.toLowerCase();
+  const data = penTesting[String(opt)];
+  if (typeof data === "string") {
+    return (
+      <div>
+        <h1>{option}</h1>
+        <p>{data}</p>
+      </div>
+    );
+  } else {
+    if (typeof data === "object") {
+      let items = [];
+      for (let key in data) {
+        items.push({ id: String(key), value: data[String(key)] });
+      }
+      console.log(items);
+      const list = items.map((e, i) => {
+        return (
+          <li key={i}>
+            <div>
+              <h1>{e.id}</h1>
+              <p>{e.value}</p>
+            </div>
+          </li>
+        );
+      });
+
+      return (
+        <div className={styles.whatIsCsec}>
+          <ul>{list}</ul>
+        </div>
+      );
+    }
+  }
+};
 //////////////////////////////////////////////////////////////////////////////////
 
 const NavigationBar = () => {
@@ -198,7 +318,17 @@ const NavigationBar = () => {
       )}
 
       <div className={styles.infoTab}>
-        <WhatIsCyberSec option={info} />
+        {(() => {
+          if (option === "Cyber-security") {
+            return <WhatIsCyberSec option={info} />;
+          }
+          if (option === "Cyber-threats") {
+            return <CyberThreats option={info} />;
+          }
+          if (option === "Pentesting") {
+            return <PenTest option={info} />;
+          }
+        })()}
       </div>
     </div>
   );
