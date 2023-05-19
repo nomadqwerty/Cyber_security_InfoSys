@@ -1,6 +1,6 @@
 .appBody {
   background: #000;
-  height: 100vh;
+  height: auto;
   width: 100vw;
   overflow-x: hidden;
 }

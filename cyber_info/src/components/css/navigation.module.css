@@ -11,17 +11,17 @@
   left: 33%;
   padding: 5px;
 }
-.list::-webkit-scrollbar {
+.listUl::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge add Firefox */
-.list {
+.listUl {
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
   list-style: none;
 }
-.list {
+.listUl {
   display: flex;
   width: 100%;
   overflow-x: scroll;
@@ -41,7 +41,7 @@
   top: 35px;
 }
 .menu {
-  height: 300px;
+  height: 150px;
   background: #c97777;
   width: 100%;
   display: flex;
@@ -67,4 +67,12 @@
 .sublist {
   position: relative;
   left: 7vw;
+}
+.sublistItem p {
+  cursor: pointer;
+}
+.infoTab {
+  height: 400px;
+  background: white;
+  overflow-x: scroll;
 }
